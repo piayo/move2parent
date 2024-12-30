@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
                 },
             },
             lib: {
-                name: "gcalize",
+                name: "lib",
                 fileName: (format, entryName) => `${entryName}.js`,
                 entry: {
                     "js/service-worker"  : "src/ts/service-worker.ts",
@@ -49,7 +49,7 @@ export default defineConfig(({ mode }) => {
         ],
         test: {
             include: [
-                "**/*.{test,spec}.ts",
+                "test/**/*.{test,spec}.ts",
             ]
         },
     };
