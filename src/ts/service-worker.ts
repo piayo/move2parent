@@ -22,7 +22,7 @@ async function onCLickHandler( tab: chrome.tabs.Tab ): Promise<void> {
 }
 
 
-function onActivatedHandler(info: chrome.tabs.TabHighlightInfo): void {
+function onHighlightedHandler(info: chrome.tabs.TabHighlightInfo): void {
     if ( !info || !info.tabIds || !info.tabIds.at(0) ) {
         return;
     }
@@ -52,5 +52,5 @@ function onActivatedHandler(info: chrome.tabs.TabHighlightInfo): void {
 chrome.action.onClicked.removeListener( onCLickHandler );
 chrome.action.onClicked.addListener( onCLickHandler );
 
-chrome.tabs.onHighlighted.removeListener(onActivatedHandler);
-chrome.tabs.onHighlighted.addListener(onActivatedHandler);
+chrome.tabs.onHighlighted.removeListener(onHighlightedHandler);
+chrome.tabs.onHighlighted.addListener(onHighlightedHandler);
